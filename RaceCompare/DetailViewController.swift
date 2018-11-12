@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  RaceCompare
 //
 //  Created by Jason Hilimire on 11/12/18.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
-
+class DetailViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    
 }
-
