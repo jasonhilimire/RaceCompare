@@ -10,6 +10,9 @@ import UIKit
 
 class EventCell: UITableViewCell {
     
+    @IBOutlet var eventNameLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var percentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
