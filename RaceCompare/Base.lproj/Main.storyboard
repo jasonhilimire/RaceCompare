@@ -69,6 +69,7 @@
                     <navigationItem key="navigationItem" id="oeI-nw-PaC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Wn-Yi-Ih2">
                             <connections>
+                                <action selector="addNewEvent:" destination="J2H-3q-C52" id="jH2-tI-3VA"/>
                                 <segue destination="M30-sA-Esi" kind="show" id="9H5-0L-nOp"/>
                             </connections>
                         </barButtonItem>

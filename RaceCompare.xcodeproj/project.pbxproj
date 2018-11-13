@@ -15,6 +15,7 @@
 		A3648F37219A4760003C8961 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3648F36219A4760003C8961 /* DetailViewController.swift */; };
 		A3648F39219A4A5B003C8961 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3648F38219A4A5B003C8961 /* Event.swift */; };
 		A3648F3B219A5B85003C8961 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3648F3A219A5B85003C8961 /* EventCell.swift */; };
+		A3BD1B5F219A7ADF00C1701B /* EventDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BD1B5E219A7ADF00C1701B /* EventDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A3648F36219A4760003C8961 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A3648F38219A4A5B003C8961 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A3648F3A219A5B85003C8961 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		A3BD1B5E219A7ADF00C1701B /* EventDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				A3648F24219A4514003C8961 /* AppDelegate.swift */,
 				A3648F26219A4514003C8961 /* ViewController.swift */,
+				A3BD1B5E219A7ADF00C1701B /* EventDataModel.swift */,
 				A3648F28219A4514003C8961 /* Main.storyboard */,
 				A3648F3A219A5B85003C8961 /* EventCell.swift */,
 				A3648F36219A4760003C8961 /* DetailViewController.swift */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3BD1B5F219A7ADF00C1701B /* EventDataModel.swift in Sources */,
 				A3648F37219A4760003C8961 /* DetailViewController.swift in Sources */,
 				A3648F39219A4A5B003C8961 /* Event.swift in Sources */,
 				A3648F3B219A5B85003C8961 /* EventCell.swift in Sources */,
