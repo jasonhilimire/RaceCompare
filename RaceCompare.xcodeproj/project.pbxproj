@@ -13,6 +13,8 @@
 		A3648F2C219A4515003C8961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3648F2B219A4515003C8961 /* Assets.xcassets */; };
 		A3648F2F219A4515003C8961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3648F2D219A4515003C8961 /* LaunchScreen.storyboard */; };
 		A3648F37219A4760003C8961 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3648F36219A4760003C8961 /* DetailViewController.swift */; };
+		A3648F39219A4A5B003C8961 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3648F38219A4A5B003C8961 /* Event.swift */; };
+		A3648F3B219A5B85003C8961 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3648F3A219A5B85003C8961 /* EventCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A3648F2E219A4515003C8961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3648F30219A4515003C8961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3648F36219A4760003C8961 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A3648F38219A4A5B003C8961 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A3648F3A219A5B85003C8961 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				A3648F24219A4514003C8961 /* AppDelegate.swift */,
 				A3648F26219A4514003C8961 /* ViewController.swift */,
 				A3648F28219A4514003C8961 /* Main.storyboard */,
+				A3648F3A219A5B85003C8961 /* EventCell.swift */,
 				A3648F36219A4760003C8961 /* DetailViewController.swift */,
 				A3648F2B219A4515003C8961 /* Assets.xcassets */,
 				A3648F2D219A4515003C8961 /* LaunchScreen.storyboard */,
 				A3648F30219A4515003C8961 /* Info.plist */,
+				A3648F38219A4A5B003C8961 /* Event.swift */,
 			);
 			path = RaceCompare;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3648F37219A4760003C8961 /* DetailViewController.swift in Sources */,
+				A3648F39219A4A5B003C8961 /* Event.swift in Sources */,
+				A3648F3B219A5B85003C8961 /* EventCell.swift in Sources */,
 				A3648F27219A4514003C8961 /* ViewController.swift in Sources */,
 				A3648F25219A4514003C8961 /* AppDelegate.swift in Sources */,
 			);
