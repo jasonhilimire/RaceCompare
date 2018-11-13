@@ -96,7 +96,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxs-ww-0H7">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxs-ww-0H7">
                                         <rect key="frame" x="0.0" y="22.5" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="myZ-S9-Q9M"/>
@@ -111,7 +111,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSp-nD-XOu">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSp-nD-XOu">
                                         <rect key="frame" x="0.0" y="77" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="uCa-8F-pGW"/>
@@ -126,7 +126,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORn-zJ-fOg">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORn-zJ-fOg">
                                         <rect key="frame" x="0.0" y="131.5" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="u3Y-gt-97n"/>
@@ -141,7 +141,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trD-Ly-xQq">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Compare Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trD-Ly-xQq">
                                         <rect key="frame" x="0.0" y="186" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bid-xt-WtK"/>
@@ -168,21 +168,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fvl-4j-f9a">
-                                        <rect key="frame" x="0.0" y="285.5" width="335" height="472.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Enter Notes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2JV-08-ERh">
+                                        <rect key="frame" x="0.0" y="285.5" width="374" height="472.5"/>
+                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="kxs-ww-0H7" firstAttribute="leading" secondItem="DMP-X1-pPz" secondAttribute="leading" id="6AQ-eQ-ted"/>
                                     <constraint firstAttribute="trailing" secondItem="bSp-nD-XOu" secondAttribute="trailing" id="8n1-QW-NrQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="2JV-08-ERh" secondAttribute="trailing" id="Ata-IO-0ow"/>
                                     <constraint firstAttribute="trailing" secondItem="ORn-zJ-fOg" secondAttribute="trailing" id="IY7-Vb-2r8"/>
                                     <constraint firstAttribute="trailing" secondItem="kxs-ww-0H7" secondAttribute="trailing" id="Noj-Fe-deJ"/>
                                     <constraint firstAttribute="trailing" secondItem="trD-Ly-xQq" secondAttribute="trailing" id="ZM1-Se-oea"/>
                                     <constraint firstItem="ORn-zJ-fOg" firstAttribute="leading" secondItem="DMP-X1-pPz" secondAttribute="leading" id="bDC-dl-7q7"/>
+                                    <constraint firstItem="2JV-08-ERh" firstAttribute="leading" secondItem="DMP-X1-pPz" secondAttribute="leading" id="gDx-Hd-Zfc"/>
                                     <constraint firstItem="trD-Ly-xQq" firstAttribute="leading" secondItem="DMP-X1-pPz" secondAttribute="leading" id="mfp-pZ-lkt"/>
                                     <constraint firstItem="mHt-ld-a6q" firstAttribute="leading" secondItem="DMP-X1-pPz" secondAttribute="leading" id="trQ-lC-ZMc"/>
                                     <constraint firstItem="bSp-nD-XOu" firstAttribute="leading" secondItem="DMP-X1-pPz" secondAttribute="leading" id="wzc-g5-mi0"/>
