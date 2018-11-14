@@ -49,6 +49,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if let compTime = Int(compareTimeField.text!) {
             event.compareTime = compTime
         }
+        
+        
+        
    
     }
     
@@ -105,8 +108,28 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         } else if timeField.isEditing {
             self.timeField.text = "\(totalTimeInSeconds)"
         }
+        percentCompare()
+    }
+    
+    func percentCompare() {
+        let userTime = Int(timeField.text!)
+        let compareTime = Int(compareTimeField.text!)
         
+        print ("UserTime:\(userTime) , CompareTime \(compareTime)")
+ 
+        if userTime != nil  && compareTime != nil{
+            let percent = Double((userTime! * 100) / compareTime!)
+            
+            percentageLabel.text = "\(percent)%"
+ 
+        } else {
+            
+            percentageLabel.text = "0.00%"
 
+        }
+        
+        
+        
     }
     
     
