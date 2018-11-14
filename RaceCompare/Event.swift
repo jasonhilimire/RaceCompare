@@ -11,12 +11,12 @@ import UIKit
 class Event: NSObject {
     var name: String
     var date: Date?
-    var userTime: Double?
-    var compareTime: Double?
+    var userTime: Int?
+    var compareTime: Int?
     
 
     
-    init(name: String, date: Date?, userTime: Double?, compareTime: Double?) {
+    init(name: String, date: Date?, userTime: Int?, compareTime: Int?) {
         self.name = name
         self.date = date
         self.userTime = userTime
