@@ -13,14 +13,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     // MARK: - @IBOutlets
     @IBOutlet var eventNameField: UITextField!
-    
     @IBOutlet var dateField: UITextField!
-    
     @IBOutlet var compareTimeField: UITextField!
     @IBOutlet var timeField: UITextField!
-    
     @IBOutlet var notesField: UITextField!
-    
     @IBOutlet var percentageLabel: UILabel!
     
     //MARK: - Variables
@@ -43,6 +39,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         eventNameField.text = event.name
         
         compareTimeField.inputView = timePickerView
+        timeField.inputView = timePickerView
 
         // unwrap the text fields and Cast as Doubles
         if let time = Int(timeField.text!) {
@@ -79,11 +76,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case 0:
-            return "\(row) Hour"
+            return "\(row) hours"
         case 1:
-            return "\(row) Minute"
+            return "\(row) min"
         case 2:
-            return "\(row) Second"
+            return "\(row) sec"
         default:
             return ""
         }
@@ -101,11 +98,14 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
         
 
-
         let totalTimeInSeconds = ((((hour * 60) + minutes) * 60) + seconds)
         
-        self.compareTimeField.text = "\(totalTimeInSeconds)"
-
+        if compareTimeField.isEditing {
+            self.compareTimeField.text = "\(totalTimeInSeconds)"
+        } else if timeField.isEditing {
+            self.timeField.text = "\(totalTimeInSeconds)"
+        }
+        
 
     }
     

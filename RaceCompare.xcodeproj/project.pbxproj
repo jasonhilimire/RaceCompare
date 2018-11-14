@@ -43,6 +43,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A31C51DD219BD309009C130E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A3648F36219A4760003C8961 /* DetailViewController.swift */,
+				A3648F26219A4514003C8961 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A31C51DE219BD320009C130E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3648F38219A4A5B003C8961 /* Event.swift */,
+				A3BD1B5E219A7ADF00C1701B /* EventDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A31C51DF219BD334009C130E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3648F28219A4514003C8961 /* Main.storyboard */,
+				A3648F3A219A5B85003C8961 /* EventCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A3648F18219A4514003C8961 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +89,13 @@
 		A3648F23219A4514003C8961 /* RaceCompare */ = {
 			isa = PBXGroup;
 			children = (
+				A31C51DF219BD334009C130E /* View */,
+				A31C51DE219BD320009C130E /* Model */,
+				A31C51DD219BD309009C130E /* Controller */,
 				A3648F24219A4514003C8961 /* AppDelegate.swift */,
-				A3648F26219A4514003C8961 /* ViewController.swift */,
-				A3BD1B5E219A7ADF00C1701B /* EventDataModel.swift */,
-				A3648F28219A4514003C8961 /* Main.storyboard */,
-				A3648F3A219A5B85003C8961 /* EventCell.swift */,
-				A3648F36219A4760003C8961 /* DetailViewController.swift */,
 				A3648F2B219A4515003C8961 /* Assets.xcassets */,
 				A3648F2D219A4515003C8961 /* LaunchScreen.storyboard */,
 				A3648F30219A4515003C8961 /* Info.plist */,
-				A3648F38219A4A5B003C8961 /* Event.swift */,
 			);
 			path = RaceCompare;
 			sourceTree = "<group>";
