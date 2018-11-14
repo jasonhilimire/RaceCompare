@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Event {
+class Event: NSObject {
     var name: String
     var date: Date?
     var userTime: Double?
@@ -22,5 +22,10 @@ class Event {
         self.userTime = userTime
         self.compareTime = compareTime
     
+        super.init()
     }
+    
+//    convenience override init() {
+//        self.init(name: "", date: nil, userTime: nil, compareTime: nil)
+//    }
 }
