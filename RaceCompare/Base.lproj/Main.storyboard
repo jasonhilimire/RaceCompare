@@ -199,6 +199,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VXD-OG-wxr"/>
                     </view>
+                    <connections>
+                        <outlet property="compareTimeField" destination="trD-Ly-xQq" id="vhh-5r-2e1"/>
+                        <outlet property="dateField" destination="bSp-nD-XOu" id="eHs-Mb-c9r"/>
+                        <outlet property="eventNameField" destination="kxs-ww-0H7" id="VKJ-iQ-RDG"/>
+                        <outlet property="notesField" destination="2JV-08-ERh" id="xNm-aA-5Tf"/>
+                        <outlet property="percentageLabel" destination="mHt-ld-a6q" id="htX-XY-q00"/>
+                        <outlet property="timeField" destination="ORn-zJ-fOg" id="PIr-Cs-RAR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehU-9U-Xsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,8 +10,25 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    // MARK: - @IBOutlets
+    @IBOutlet var eventNameField: UITextField!
+    
+    @IBOutlet var dateField: UITextField!
+    
+    @IBOutlet var compareTimeField: UITextField!
+    @IBOutlet var timeField: UITextField!
+    
+    @IBOutlet var notesField: UITextField!
+    
+    @IBOutlet var percentageLabel: UILabel!
+    
+    //MARK: - View
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
     }
     
 }
