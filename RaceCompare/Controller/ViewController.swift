@@ -8,8 +8,10 @@
 
 import UIKit
 
+var events = [Event]()
+
 class ViewController: UITableViewController {
-    let events = [Event]()
+
 
     @IBAction func addNewEvent(_ sender: UIBarButtonItem) {
     }
@@ -17,6 +19,11 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("TableView Array: \(events.count)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("View Appeared: TableView Array: \(events.count)")
         tableView.reloadData()
     }
     
@@ -34,11 +41,10 @@ class ViewController: UITableViewController {
         }
         
         let event = events[indexPath.row]
-        cell.eventNameLabel.text = "Text \(event.name)"
+        cell.eventNameLabel.text = "\(event.name)"
         cell.dateLabel.text = "\(String(describing: event.date))"
 //        //cell.percentLabel.text = "\(event.percentcompare)"
-        
-        
+
         return cell
     }
     

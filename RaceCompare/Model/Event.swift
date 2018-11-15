@@ -13,6 +13,8 @@ class Event: NSObject {
     var date: Date?
     var userTime: Int?
     var compareTime: Int?
+    var percentDiff: Float?
+    var note: String?
     
 
     

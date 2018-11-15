@@ -19,6 +19,30 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet var notesField: UITextField!
     @IBOutlet var percentageLabel: UILabel!
     
+    @IBAction func saveBtn(_ sender: UIBarButtonItem) {
+        
+        
+        // unwrap the text fields and Cast as Doubles
+        if let time = Int(timeField.text!) {
+            event.userTime = time
+        }
+        
+        if let compTime = Int(compareTimeField.text!) {
+            event.compareTime = compTime
+        }
+        
+        let newEvent = Event(name: eventNameField.text!, date: nil, userTime: nil, compareTime: nil)
+        print("Name:\(newEvent.name)")
+        
+        events.append(newEvent)
+        print("New Item: \(newEvent.name). Array count: \(events.count)")
+        
+    }
+
+    @IBAction func deleteBtn(_ sender: UIBarButtonItem) {
+    }
+    
+    
     //MARK: - Variables
     
     var event = Event(name: "", date: nil, userTime: nil, compareTime: nil)
@@ -36,24 +60,24 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         timePickerView.delegate = self
         timePickerView.dataSource = self
         
-        eventNameField.text = event.name
+        
         
         compareTimeField.inputView = timePickerView
         timeField.inputView = timePickerView
+//
+//        // unwrap the text fields and Cast as Doubles
+//        if let time = Int(timeField.text!) {
+//            event.userTime = time
+//        }
+//        
+//        if let compTime = Int(compareTimeField.text!) {
+//            event.compareTime = compTime
+//        }
+        
 
-        // unwrap the text fields and Cast as Doubles
-        if let time = Int(timeField.text!) {
-            event.userTime = time
-        }
-        
-        if let compTime = Int(compareTimeField.text!) {
-            event.compareTime = compTime
-        }
-        
-        
-        
-   
     }
+    
+
     
     // MARK: - PickerView Setup
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
