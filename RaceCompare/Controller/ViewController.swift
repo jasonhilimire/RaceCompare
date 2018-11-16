@@ -42,7 +42,7 @@ class ViewController: UITableViewController {
         
         let event = events[indexPath.row]
         cell.eventNameLabel.text = "\(event.name)"
-        cell.dateLabel.text = "\(String(describing: event.date))"
+        cell.stageLabel.text = "\(String(describing: event.stage))"
 //        //cell.percentLabel.text = "\(event.percentcompare)"
 
         return cell
