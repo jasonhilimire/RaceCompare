@@ -10,7 +10,7 @@ import UIKit
 
 class Event: NSObject {
     var name: String
-    var date: Date?
+    var stage: String?
     var userTime: Int?
     var compareTime: Int?
     var percentDiff: Float?
@@ -18,9 +18,9 @@ class Event: NSObject {
     
 
     
-    init(name: String, date: Date?, userTime: Int?, compareTime: Int?) {
+    init(name: String, stage: String?, userTime: Int?, compareTime: Int?) {
         self.name = name
-        self.date = date
+        self.stage = stage
         self.userTime = userTime
         self.compareTime = compareTime
     

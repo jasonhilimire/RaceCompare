@@ -13,7 +13,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     // MARK: - @IBOutlets
     @IBOutlet var eventNameField: UITextField!
-    @IBOutlet var dateField: UITextField!
+    @IBOutlet var stageField: UITextField!
     @IBOutlet var compareTimeField: UITextField!
     @IBOutlet var timeField: UITextField!
     @IBOutlet var notesField: UITextField!
@@ -45,7 +45,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     //MARK: - Variables
     
-    var event = Event(name: "", date: nil, userTime: nil, compareTime: nil)
+    var event = Event(name: "", stage: "" , userTime: nil, compareTime: nil)
     var timePickerView = UIPickerView()
     var hour = 0
     var minutes = 0
@@ -112,6 +112,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             return ""
         }
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
@@ -139,7 +140,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let userTime = Float(timeField.text!)
         let compareTime = Float(compareTimeField.text!)
         
-        print ("UserTime:\(String(describing: userTime)) , CompareTime \(compareTime)")
+        print ("UserTime:\(String(describing: userTime)) , CompareTime \(String(describing: compareTime))")
  
         if userTime != nil  && compareTime != nil{
             let percent = Float((userTime! * 100) / compareTime!)
@@ -149,7 +150,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         } else {
             
             percentageLabel.text = "0.00%"
-
         }
         
         

@@ -32,14 +32,14 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/11/18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxS-lZ-NRx">
-                                            <rect key="frame" x="20" y="33" width="59" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Stage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxS-lZ-NRx" userLabel="Stage Label">
+                                            <rect key="frame" x="20" y="36" width="89" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK6-eB-Uuu">
-                                            <rect key="frame" x="20" y="11" width="88" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EventName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK6-eB-Uuu">
+                                            <rect key="frame" x="20" y="11" width="194" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -224,10 +224,10 @@
                     </view>
                     <connections>
                         <outlet property="compareTimeField" destination="trD-Ly-xQq" id="vhh-5r-2e1"/>
-                        <outlet property="dateField" destination="bSp-nD-XOu" id="eHs-Mb-c9r"/>
                         <outlet property="eventNameField" destination="kxs-ww-0H7" id="VKJ-iQ-RDG"/>
                         <outlet property="notesField" destination="2JV-08-ERh" id="xNm-aA-5Tf"/>
                         <outlet property="percentageLabel" destination="mHt-ld-a6q" id="htX-XY-q00"/>
+                        <outlet property="stageField" destination="bSp-nD-XOu" id="eHs-Mb-c9r"/>
                         <outlet property="timeField" destination="ORn-zJ-fOg" id="PIr-Cs-RAR"/>
                     </connections>
                 </viewController>
