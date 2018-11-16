@@ -11,7 +11,7 @@ import UIKit
 class EventCell: UITableViewCell {
     
     @IBOutlet var eventNameLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var stageLabel: UILabel!
     @IBOutlet var percentLabel: UILabel!
     
     override func awakeFromNib() {

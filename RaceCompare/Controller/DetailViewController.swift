@@ -31,6 +31,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             event.compareTime = compTime
         }
         
+        
         let newEvent = Event(name: eventNameField.text!, stage: stageField.text!, userTime: nil, compareTime: nil)
         print("Name:\(newEvent.name)")
         
