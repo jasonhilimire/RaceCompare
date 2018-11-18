@@ -22,11 +22,18 @@ class ViewController: UITableViewController {
     
     @IBAction func unwindToEventList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? DetailViewController, let event = sourceViewController.event {
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // update an exisiting event
+                events[selectedIndexPath.row] = event
+            } else {
+            
             //Add a new event
             let newIndexPath = IndexPath(row: events.count, section: 0)
             
             events.append(event)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
     
@@ -73,14 +80,49 @@ class ViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailVCSegue" {
-            if let destinationVC = segue.destination as? DetailViewController {
-                if let anEvent = sender as? Event {
-                    destinationVC.eventNameField.text = anEvent.name
-//                    destinationVC.newEvent = anEvent
-                }
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "AddItem":
+            //
+            print("AddItem")
+            
+        case "detailVCsegue":
+            guard let eventDetailViewController = segue.destination as? DetailViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
             }
+            
+            guard let selectedEventCell = sender as? EventCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedEventCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedEvent = events[indexPath.row]
+           eventDetailViewController.event = selectedEvent
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
+        
+        
+        
+        
+        
+        
+//        if segue.identifier == "detailVCsegue" {
+//            if let destinationVC = segue.destination as? DetailViewController {
+//                if let selectedEventCell = sender as? EventCell {
+//                    if let indexPath = tableView.indexPath(for: selectedEventCell) {
+//                        let selectedEvent = events[indexPath.row]
+//                        destinationVC.event = selectedEvent
+//                    }
+//                }
+//            }
+//        }
     }
 }
 

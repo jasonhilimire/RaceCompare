@@ -19,7 +19,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet var notesField: UITextField!
     @IBOutlet var percentageLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
+
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
 //    @IBAction func saveBtn(_ sender: UIBarButtonItem) {
 //
@@ -66,14 +69,22 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         compareTimeField.inputView = timePickerView
         timeField.inputView = timePickerView
 
+        // Handle the text fiels user input through delegate call backs
         eventNameField.delegate = self
         
+//        loadEventData()
+        if let event = event {
+            navigationItem.title = event.name
+            eventNameField.text = event.name
+        }
         updateSaveButtonStatus()
-        loadEventData()
-
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadEventData()
+    }
 
     
     // MARK: - PickerView Setup
@@ -165,7 +176,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func loadEventData() {
-//        eventNameField.text = event.name
+        if let event = event {
+            navigationItem.title = event.name
+            eventNameField.text = event.name
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
