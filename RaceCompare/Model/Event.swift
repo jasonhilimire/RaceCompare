@@ -10,21 +10,20 @@ import UIKit
 
 class Event: NSObject {
     var name: String
-    var stage: String?
-    var userTime: Int?
-    var compareTime: Int?
-    var percentDiff: Float?
-    var note: String?
+//    var stage: String?
+//    var userTime: Int?
+//    var compareTime: Int?
+//    var percentDiff: Float?
+//    var note: String?
     
 
     
-    init(name: String, stage: String?, userTime: Int?, compareTime: Int?) {
+    init(name: String) {
         self.name = name
-        self.stage = stage
-        self.userTime = userTime
-        self.compareTime = compareTime
-    
-        super.init()
+//        self.stage = stage
+//        self.userTime = userTime
+//        self.compareTime = compareTime
+
     }
     
 //    convenience override init() {

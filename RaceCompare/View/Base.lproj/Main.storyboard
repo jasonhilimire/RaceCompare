@@ -58,7 +58,7 @@
                                     <outlet property="eventNameLabel" destination="sK6-eB-Uuu" id="WVj-bP-jUc"/>
                                     <outlet property="percentLabel" destination="vfZ-uL-ZoD" id="el9-hd-jfx"/>
                                     <outlet property="stageLabel" destination="WxS-lZ-NRx" id="o1x-ve-b3r"/>
-                                    <segue destination="M30-sA-Esi" kind="show" identifier="detailVCSegue" trigger="accessoryAction" id="Ctp-q8-aLI"/>
+                                    <segue destination="M30-sA-Esi" kind="show" identifier="detailVCsegue" id="nxZ-JA-i57"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,7 +71,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Wn-Yi-Ih2">
                             <connections>
                                 <action selector="addNewEvent:" destination="J2H-3q-C52" id="jH2-tI-3VA"/>
-                                <segue destination="M30-sA-Esi" kind="show" id="9H5-0L-nOp"/>
+                                <segue destination="sw4-PU-3Tb" kind="show" identifier="AddItem" id="Zp2-Ml-oxk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="143.30357142857142"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--New Event-->
         <scene sceneID="Z2r-GH-LAq">
             <objects>
                 <viewController id="M30-sA-Esi" customClass="DetailViewController" customModule="RaceCompare" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="DMP-X1-pPz">
-                                <rect key="frame" x="20" y="96" width="374" height="709"/>
+                                <rect key="frame" x="20" y="96" width="374" height="758"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAW-Vr-YQE">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="20.5"/>
@@ -175,7 +175,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Enter Notes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2JV-08-ERh">
-                                        <rect key="frame" x="0.0" y="275.5" width="374" height="433.5"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="374" height="482.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -194,47 +194,34 @@
                                     <constraint firstItem="bSp-nD-XOu" firstAttribute="leading" secondItem="DMP-X1-pPz" secondAttribute="leading" id="wzc-g5-mi0"/>
                                 </constraints>
                             </stackView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3z-WL-7co">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <items>
-                                    <barButtonItem systemItem="trash" id="ZBs-vK-2x7">
-                                        <connections>
-                                            <action selector="deleteBtn:" destination="M30-sA-Esi" id="bqb-DW-ZtR"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ahI-YI-f8Y"/>
-                                    <barButtonItem systemItem="save" id="R8k-d7-GY7">
-                                        <connections>
-                                            <action selector="saveBtn:" destination="M30-sA-Esi" id="IlJ-dc-UOd"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="x3z-WL-7co" firstAttribute="top" secondItem="DMP-X1-pPz" secondAttribute="bottom" constant="8" id="0HM-kT-qlR"/>
-                            <constraint firstItem="x3z-WL-7co" firstAttribute="leading" secondItem="VXD-OG-wxr" secondAttribute="leading" id="3cv-nE-wp2"/>
                             <constraint firstItem="DMP-X1-pPz" firstAttribute="leading" secondItem="VXD-OG-wxr" secondAttribute="leading" constant="20" id="4um-DZ-W3j"/>
-                            <constraint firstItem="x3z-WL-7co" firstAttribute="bottom" secondItem="VXD-OG-wxr" secondAttribute="bottom" id="Icw-D3-eXY"/>
-                            <constraint firstItem="VXD-OG-wxr" firstAttribute="trailing" secondItem="x3z-WL-7co" secondAttribute="trailing" id="U8q-OM-EPJ"/>
                             <constraint firstItem="VXD-OG-wxr" firstAttribute="trailing" secondItem="DMP-X1-pPz" secondAttribute="trailing" constant="20" id="Ygr-Mj-D9q"/>
+                            <constraint firstItem="VXD-OG-wxr" firstAttribute="bottom" secondItem="DMP-X1-pPz" secondAttribute="bottom" constant="8" id="sEV-Ui-qx7"/>
                             <constraint firstItem="DMP-X1-pPz" firstAttribute="top" secondItem="VXD-OG-wxr" secondAttribute="top" constant="8" id="vP6-mx-DBK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VXD-OG-wxr"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Event" id="D6I-5N-HkA">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="inx-ks-Tx2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="Sni-H4-GBq"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="inx-ks-Tx2" id="T8U-as-8Xo"/>
                         <outlet property="compareTimeField" destination="trD-Ly-xQq" id="vhh-5r-2e1"/>
                         <outlet property="eventNameField" destination="kxs-ww-0H7" id="VKJ-iQ-RDG"/>
                         <outlet property="notesField" destination="2JV-08-ERh" id="xNm-aA-5Tf"/>
                         <outlet property="percentageLabel" destination="mHt-ld-a6q" id="htX-XY-q00"/>
+                        <outlet property="saveButton" destination="Sni-H4-GBq" id="h4N-pX-2YD"/>
                         <outlet property="stageField" destination="bSp-nD-XOu" id="eHs-Mb-c9r"/>
                         <outlet property="timeField" destination="ORn-zJ-fOg" id="PIr-Cs-RAR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehU-9U-Xsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2002.8985507246377" y="141.96428571428569"/>
+            <point key="canvasLocation" x="3293" y="120"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M0l-Fb-cmS">
@@ -254,8 +241,26 @@
             </objects>
             <point key="canvasLocation" x="112.8" y="143.47826086956522"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r8d-N9-5o9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sw4-PU-3Tb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mFq-Mv-XFN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="M30-sA-Esi" kind="relationship" relationship="rootViewController" id="0TF-8c-TSQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gtn-oX-O19" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="500"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ctp-q8-aLI"/>
+        <segue reference="nxZ-JA-i57"/>
     </inferredMetricsTieBreakers>
 </document>

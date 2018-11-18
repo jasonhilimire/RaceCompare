@@ -18,32 +18,33 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet var timeField: UITextField!
     @IBOutlet var notesField: UITextField!
     @IBOutlet var percentageLabel: UILabel!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
-    @IBAction func saveBtn(_ sender: UIBarButtonItem) {
-        
-        let newEvent = Event(name: "", stage: "", userTime: nil, compareTime: nil)
-        // unwrap the text fields and Cast as Doubles
-        if let time = Int(timeField.text!) {
-            newEvent.userTime = time
-        }
-        
-        if let compTime = Int(compareTimeField.text!) {
-            newEvent.compareTime = compTime
-        }
-        
-        
-        if let name = eventNameField.text {
-            newEvent.name = name
-        }
-        print("Name:\(newEvent.name)")
-        
-        events.append(newEvent)
-        print("New Item: \(newEvent.name). Array count: \(events.count)")
-        
-    }
+//    @IBAction func saveBtn(_ sender: UIBarButtonItem) {
+//
+//        let newEvent = Event(name: "", stage: "", userTime: nil, compareTime: nil)
+//        // unwrap the text fields and Cast as Doubles
+//        if let time = Int(timeField.text!) {
+//            newEvent.userTime = time
+//        }
+//
+//        if let compTime = Int(compareTimeField.text!) {
+//            newEvent.compareTime = compTime
+//        }
+//
+//
+//        if let name = eventNameField.text {
+//            newEvent.name = name
+//        }
+//        print("Name:\(newEvent.name)")
+//
+//        events.append(newEvent)
+//        print("New Item: \(newEvent.name). Array count: \(events.count)")
+//
+//    }
 
-    @IBAction func deleteBtn(_ sender: UIBarButtonItem) {
-    }
+  
     
     
     //MARK: - Variables
@@ -52,6 +53,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var hour = 0
     var minutes = 0
     var seconds = 0
+    var event: Event?
     
     //MARK: - View
     override func viewDidLoad() {
@@ -65,7 +67,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         timeField.inputView = timePickerView
 
         loadEventData()
-        print("VC: \(event.name)")
+
 
     }
     
@@ -147,7 +149,21 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func loadEventData() {
-        eventNameField.text = event.name
+//        eventNameField.text = event.name
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        //Configure Destination view Controller when Save is pressed
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            return
+        }
+        let name = eventNameField.text ?? ""
+        
+        
+        // set the event to be passed to the ViewController
+        event = Event(name: name)
     }
     
     

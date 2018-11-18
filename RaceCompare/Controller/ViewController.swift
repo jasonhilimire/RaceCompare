@@ -8,11 +8,14 @@
 
 import UIKit
 
-var events = [Event]()
-var event = Event(name: "", stage: "", userTime: nil, compareTime: nil)
+
+
 
 class ViewController: UITableViewController {
 
+    var events = [Event]()
+    
+    // MARK: - Actions
 
     @IBAction func addNewEvent(_ sender: UIBarButtonItem) {
     }
