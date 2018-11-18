@@ -58,5 +58,16 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailVCSegue" {
+            if let destinationVC = segue.destination as? DetailViewController {
+                if let anEvent = sender as? Event {
+                    destinationVC.eventNameField.text = anEvent.name
+//                    destinationVC.newEvent = anEvent
+                }
+            }
+        }
+    }
 }
 

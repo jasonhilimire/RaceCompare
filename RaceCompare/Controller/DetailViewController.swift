@@ -32,11 +32,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
         
         
-        let newEvent = Event(name: eventNameField.text!, stage: stageField.text!, userTime: nil, compareTime: nil)
-        print("Name:\(newEvent.name)")
+        if let name = eventNameField.text {
+            event.name = name
+        }
+        print("Name:\(event.name)")
         
-        events.append(newEvent)
-        print("New Item: \(newEvent.name). Array count: \(events.count)")
+        events.append(event)
+        print("New Item: \(event.name). Array count: \(events.count)")
         
     }
 
@@ -46,12 +48,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     //MARK: - Variables
     
-    var event = Event(name: "", stage: "" , userTime: nil, compareTime: nil)
     var timePickerView = UIPickerView()
     var hour = 0
     var minutes = 0
     var seconds = 0
-    
     
     //MARK: - View
     override func viewDidLoad() {
@@ -61,24 +61,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         timePickerView.delegate = self
         timePickerView.dataSource = self
         
-        
-        
         compareTimeField.inputView = timePickerView
         timeField.inputView = timePickerView
-//
-//        // unwrap the text fields and Cast as Doubles
-//        if let time = Int(timeField.text!) {
-//            event.userTime = time
-//        }
-//        
-//        if let compTime = Int(compareTimeField.text!) {
-//            event.compareTime = compTime
-//        }
-        
+
+        loadEventData()
+        print("VC: \(event.name)")
 
     }
-    
-
     
     // MARK: - PickerView Setup
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -152,11 +141,12 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             
             percentageLabel.text = "0.00%"
         }
-        
-        
-        
+
     }
     
+    func loadEventData() {
+        eventNameField.text = event.name
+    }
     
     
 }

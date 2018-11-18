@@ -19,15 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="65" id="SHB-fa-8x1" customClass="EventCell" customModule="RaceCompare" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="Cell" rowHeight="65" id="SHB-fa-8x1" customClass="EventCell" customModule="RaceCompare" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SHB-fa-8x1" id="ByL-ck-uru">
-                                    <rect key="frame" x="0.0" y="0.0" width="376" height="64.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="362" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfZ-uL-ZoD">
-                                            <rect key="frame" x="325" y="22" width="43" height="21"/>
+                                            <rect key="frame" x="311" y="22" width="43" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -58,6 +58,7 @@
                                     <outlet property="eventNameLabel" destination="sK6-eB-Uuu" id="WVj-bP-jUc"/>
                                     <outlet property="percentLabel" destination="vfZ-uL-ZoD" id="el9-hd-jfx"/>
                                     <outlet property="stageLabel" destination="WxS-lZ-NRx" id="o1x-ve-b3r"/>
+                                    <segue destination="M30-sA-Esi" kind="show" identifier="detailVCSegue" trigger="accessoryAction" id="Ctp-q8-aLI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -254,4 +255,7 @@
             <point key="canvasLocation" x="112.8" y="143.47826086956522"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ctp-q8-aLI"/>
+    </inferredMetricsTieBreakers>
 </document>
