@@ -21,24 +21,24 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBAction func saveBtn(_ sender: UIBarButtonItem) {
         
-        
+        let newEvent = Event(name: "", stage: "", userTime: nil, compareTime: nil)
         // unwrap the text fields and Cast as Doubles
         if let time = Int(timeField.text!) {
-            event.userTime = time
+            newEvent.userTime = time
         }
         
         if let compTime = Int(compareTimeField.text!) {
-            event.compareTime = compTime
+            newEvent.compareTime = compTime
         }
         
         
         if let name = eventNameField.text {
-            event.name = name
+            newEvent.name = name
         }
-        print("Name:\(event.name)")
+        print("Name:\(newEvent.name)")
         
-        events.append(event)
-        print("New Item: \(event.name). Array count: \(events.count)")
+        events.append(newEvent)
+        print("New Item: \(newEvent.name). Array count: \(events.count)")
         
     }
 
@@ -68,6 +68,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         print("VC: \(event.name)")
 
     }
+    
+
     
     // MARK: - PickerView Setup
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
