@@ -20,6 +20,16 @@ class ViewController: UITableViewController {
     @IBAction func addNewEvent(_ sender: UIBarButtonItem) {
     }
     
+    @IBAction func unwindToEventList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? DetailViewController, let event = sourceViewController.event {
+            //Add a new event
+            let newIndexPath = IndexPath(row: events.count, section: 0)
+            
+            events.append(event)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +57,7 @@ class ViewController: UITableViewController {
         let event = events[indexPath.row]
         cell.eventNameLabel.text = "\(event.name)"
         // unwrap optional stage and give default of "" if nil
-        cell.stageLabel.text! = "\(event.stage ?? "")"
+//        cell.stageLabel.text! = "\(event.stage ?? "")"
 //        //cell.percentLabel.text = "\(event.percentcompare)"
 
         return cell

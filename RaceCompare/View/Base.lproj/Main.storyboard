@@ -206,7 +206,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Event" id="D6I-5N-HkA">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="inx-ks-Tx2"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="Sni-H4-GBq"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="Sni-H4-GBq">
+                            <connections>
+                                <segue destination="nVM-O4-pgp" kind="unwind" unwindAction="unwindToEventListWithSender:" id="drn-Y6-1No"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="inx-ks-Tx2" id="T8U-as-8Xo"/>
@@ -220,6 +224,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehU-9U-Xsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nVM-O4-pgp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3293" y="120"/>
         </scene>

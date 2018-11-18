@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     
     // MARK: - @IBOutlets
@@ -66,6 +66,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         compareTimeField.inputView = timePickerView
         timeField.inputView = timePickerView
 
+        eventNameField.delegate = self
+        
+        updateSaveButtonStatus()
         loadEventData()
 
 
@@ -130,6 +133,19 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         percentCompare()
     }
     
+    // MARK: - UITextFieldDelegates
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        saveButton.isEnabled = false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonStatus()
+        navigationItem.title = eventNameField.text
+    }
+    
+    
+    //MARK: - Functions
     func percentCompare() {
         let userTime = Float(timeField.text!)
         let compareTime = Float(compareTimeField.text!)
@@ -164,6 +180,14 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         // set the event to be passed to the ViewController
         event = Event(name: name)
+    }
+    
+    //MARK: - Private Methods
+    
+    private func updateSaveButtonStatus() {
+        //Disable the save button
+        let text = eventNameField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
     
     
