@@ -21,31 +21,20 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var saveButton: UIBarButtonItem!
 
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+            fatalError("The DetailViewController is not inside a navigation controller.")
+        }
     }
     
-//    @IBAction func saveBtn(_ sender: UIBarButtonItem) {
-//
-//        let newEvent = Event(name: "", stage: "", userTime: nil, compareTime: nil)
-//        // unwrap the text fields and Cast as Doubles
-//        if let time = Int(timeField.text!) {
-//            newEvent.userTime = time
-//        }
-//
-//        if let compTime = Int(compareTimeField.text!) {
-//            newEvent.compareTime = compTime
-//        }
-//
-//
-//        if let name = eventNameField.text {
-//            newEvent.name = name
-//        }
-//        print("Name:\(newEvent.name)")
-//
-//        events.append(newEvent)
-//        print("New Item: \(newEvent.name). Array count: \(events.count)")
-//
-//    }
 
   
     
@@ -72,19 +61,12 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         // Handle the text fiels user input through delegate call backs
         eventNameField.delegate = self
         
-//        loadEventData()
-        if let event = event {
-            navigationItem.title = event.name
-            eventNameField.text = event.name
-        }
+        loadEventData()
+
         updateSaveButtonStatus()
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadEventData()
-    }
 
     
     // MARK: - PickerView Setup
