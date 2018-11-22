@@ -6,6 +6,8 @@
 //  Copyright © 2018 Peanut Apps. All rights reserved.
 //
 
+//https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/ImplementEditAndDeleteBehavior.html#//apple_ref/doc/uid/TP40015214-CH9-SW1
+
 import UIKit
 
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
@@ -22,9 +24,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        let isPresentingInAddEventMode = presentingViewController is UINavigationController
         
-        if isPresentingInAddMealMode {
+        if isPresentingInAddEventMode {
             dismiss(animated: true, completion: nil)
         }
         else if let owningNavigationController = navigationController{
@@ -34,9 +36,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             fatalError("The DetailViewController is not inside a navigation controller.")
         }
     }
-    
-
-  
     
     
     //MARK: - Variables

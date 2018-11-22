@@ -58,7 +58,7 @@ class ViewController: UITableViewController {
         let cellIdentifier = "Cell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? EventCell else {
-            fatalError("The dequed cell is not an instance of ShotCycleTableViewCell.")
+            fatalError("The dequed cell is not an instance of EventCell.")
         }
         
         let event = events[indexPath.row]
@@ -72,13 +72,30 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
-//        return 1
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
     }
     
+    // delete a row
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // remove the item at its indexpath
+        events.remove(at: indexPath.row)
+
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+        // this is a deletion with the animation
+        
+        tableView.reloadData()
+        
+        
+    }
+    
+
+    
+    
+    // MARK: - SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -113,16 +130,7 @@ class ViewController: UITableViewController {
         
         
         
-//        if segue.identifier == "detailVCsegue" {
-//            if let destinationVC = segue.destination as? DetailViewController {
-//                if let selectedEventCell = sender as? EventCell {
-//                    if let indexPath = tableView.indexPath(for: selectedEventCell) {
-//                        let selectedEvent = events[indexPath.row]
-//                        destinationVC.event = selectedEvent
-//                    }
-//                }
-//            }
-//        }
+
     }
 }
 
