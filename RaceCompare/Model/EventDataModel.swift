@@ -20,7 +20,7 @@ class EventDataModel {
         return documentsDirectory().appendingPathComponent("RaceCompare.plist")
     }
     
-    func saveShotCycleArray() {
+    func saveEventsArray() {
         let encoder = PropertyListEncoder()
         do {
             let data = try encoder.encode(events)
@@ -37,7 +37,7 @@ class EventDataModel {
             let decoder = PropertyListDecoder()
             do {
                 events = try decoder.decode([Event].self, from: data)
-
+                print("loadEventsArray() was run")
             } catch {
                 print("Error loading Events  array!")
             }

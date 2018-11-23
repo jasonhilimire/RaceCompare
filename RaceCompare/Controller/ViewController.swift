@@ -35,7 +35,7 @@ class ViewController: UITableViewController {
             events.append(event)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
-            dataModel.saveShotCycleArray()
+            saveData()
         }
     }
     
@@ -43,6 +43,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         print("TableView Array: \(events.count)")
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +91,7 @@ class ViewController: UITableViewController {
         // this is a deletion with the animation
         
         tableView.reloadData()
-        
+        saveData()
         
     }
     
@@ -127,12 +128,21 @@ class ViewController: UITableViewController {
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
         
-        
-        
-        
-        
-        
-
     }
+    
+    
+    //MARK:- Save/Delete DATA
+    
+    func saveData() {
+        dataModel.saveEventsArray()
+    }
+    
+    func loadData() {
+        dataModel.loadEventsArray()
+    }
+    
+    
+    
+    
 }
 
