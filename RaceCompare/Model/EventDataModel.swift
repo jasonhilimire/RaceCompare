@@ -9,13 +9,16 @@
 import UIKit
 
 class EventDataModel {
+    
+    // set up the documents directory
     func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let showDocumentsDirectory = paths[0]
-        print(showDocumentsDirectory)  // this will show documents directory on local machine
+//        let showDocumentsDirectory = paths[0]
+//        print(showDocumentsDirectory)  // this will show documents directory on local machine
         return paths[0]
     }
     
+    // get the documents directory and append the file named RaceCompare.plist
     func dataFilePath() -> URL {
         return documentsDirectory().appendingPathComponent("RaceCompare.plist")
     }
@@ -25,7 +28,6 @@ class EventDataModel {
         do {
             let data = try encoder.encode(events)
             try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
-            print("Event: \(events) was written")
         } catch {
             print(" Error encoding Event array")
         }
@@ -37,7 +39,6 @@ class EventDataModel {
             let decoder = PropertyListDecoder()
             do {
                 events = try decoder.decode([Event].self, from: data)
-                print("loadEventsArray() was run")
             } catch {
                 print("Error loading Events  array!")
             }
