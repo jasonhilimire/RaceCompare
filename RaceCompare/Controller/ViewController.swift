@@ -8,12 +8,13 @@
 
 import UIKit
 
-
+    var events = [Event]()
 
 
 class ViewController: UITableViewController {
 
-    var events = [Event]()
+    let dataModel = EventDataModel()
+
     
     // MARK: - Actions
 
@@ -34,6 +35,7 @@ class ViewController: UITableViewController {
             events.append(event)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            dataModel.saveShotCycleArray()
         }
     }
     
