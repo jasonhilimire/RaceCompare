@@ -68,7 +68,7 @@ class ViewController: UITableViewController {
         cell.eventNameLabel.text = "\(event.name)"
         // unwrap optional stage and give default of "" if nil
 //        cell.stageLabel.text! = "\(event.stage ?? "")"
-//        //cell.percentLabel.text = "\(event.percentcompare)"
+        cell.percentLabel.text! = "\(String(describing: event.percentDiff))"
 
         return cell
     }

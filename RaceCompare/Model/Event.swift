@@ -13,14 +13,14 @@ class Event: Codable {
     
     var name: String
 //    var stage: String?
-//    var userTime: Int?
-//    var compareTime: Int?
-//    var percentDiff: Float?
+    var userTime: Int
+    var compareTime: Int
+    var percentDiff: Float
 //    var note: String?
     
 
     
-    init?(name: String) {
+    init?(name: String, percentDiff: Float, userTime: Int, compareTime: Int) {
         
         // name cannot be empty
         guard !name.isEmpty else {
@@ -29,24 +29,25 @@ class Event: Codable {
         
         self.name = name
 //        self.stage = stage
-//        self.userTime = userTime
-//        self.compareTime = compareTime
+        self.userTime = userTime
+        self.compareTime = compareTime
+        self.percentDiff = percentDiff
 
     }
     
     
-    
-    // MARK:- Types
-    
-    // Add PropertyKey
-    
-    struct PropertyKey {
-        static let name = "name"
-        // add the other items that need to saved
+    func percentCompare() -> Float {
+        print ("UserTime:\(String(describing: userTime)) , CompareTime \(String(describing: compareTime))")
+        
+        if userTime != 0  && compareTime != 0{
+            let percent = Float((compareTime * 100) / userTime)
+            
+            //TODO: showing as multiple decimal places- need to return it as 2
+            return percent
+        } else {
+
+            return 0.00
+        }
     }
     
-    
-
-    
-
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2018 Peanut Apps. All rights reserved.
 //
 
-//https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/ImplementEditAndDeleteBehavior.html#//apple_ref/doc/uid/TP40015214-CH9-SW1
 
 import UIKit
 
@@ -45,6 +44,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var minutes = 0
     var seconds = 0
     var event: Event?
+
     
     //MARK: - View
     override func viewDidLoad() {
@@ -57,7 +57,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         compareTimeField.inputView = timePickerView
         timeField.inputView = timePickerView
 
-        // Handle the text fiels user input through delegate call backs
+        // Handle the text fields user input through delegate call backs
         eventNameField.delegate = self
         
         loadEventData()
@@ -114,7 +114,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             break;
         }
         
-
         let totalTimeInSeconds = ((((hour * 60) + minutes) * 60) + seconds)
         
         if compareTimeField.isEditing {
@@ -122,8 +121,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         } else if timeField.isEditing {
             self.timeField.text = "\(totalTimeInSeconds)"
         }
-        percentCompare()
+        event?.percentCompare()
     }
+    
     
     // MARK: - UITextFieldDelegates
     
@@ -138,12 +138,24 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     //MARK: - Functions
+    
+    func loadEventData() {
+        if let event = event {
+            navigationItem.title = event.name
+            eventNameField.text = event.name
+            percentageLabel.text = "\(String(describing: event.percentDiff))"
+            compareTimeField.text = "\(String(describing: event.compareTime))"
+            timeField.text = "\(String(describing: event.userTime))"
+
+        }
+    }
+    
     func percentCompare() {
         let userTime = Float(timeField.text!)
         let compareTime = Float(compareTimeField.text!)
         
         print ("UserTime:\(String(describing: userTime)) , CompareTime \(String(describing: compareTime))")
- 
+        
         if userTime != nil  && compareTime != nil{
             let percent = Float((userTime! * 100) / compareTime!)
             
@@ -153,14 +165,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             
             percentageLabel.text = "0.00%"
         }
-
-    }
-    
-    func loadEventData() {
-        if let event = event {
-            navigationItem.title = event.name
-            eventNameField.text = event.name
-        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -170,11 +175,17 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         guard let button = sender as? UIBarButtonItem, button === saveButton else {
             return
         }
+
         let name = eventNameField.text ?? ""
+        let compareTime = Int(compareTimeField.text ?? "")
+        let userTime = Int(timeField.text ?? "")
+        let percentDiff = Float(percentageLabel.text ?? "")
         
         
         // set the event to be passed to the ViewController
-        event = Event(name: name)
+        event = Event(name: name, percentDiff: percentDiff ?? 0, userTime: userTime ?? 0, compareTime: compareTime ?? 0)
+        
+        print("PercentDiff = \(percentDiff)")
     }
     
     //MARK: - Private Methods

@@ -48,7 +48,6 @@
 			children = (
 				A3648F36219A4760003C8961 /* DetailViewController.swift */,
 				A3648F26219A4514003C8961 /* ViewController.swift */,
-				A3EB44CE21A89A8C0051212A /* EventDataModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -56,6 +55,7 @@
 		A31C51DE219BD320009C130E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3EB44CE21A89A8C0051212A /* EventDataModel.swift */,
 				A3648F38219A4A5B003C8961 /* Event.swift */,
 			);
 			path = Model;
