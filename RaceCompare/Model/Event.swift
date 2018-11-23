@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Event: NSObject, NSCoding {
+class Event {
 
     
     var name: String
@@ -46,29 +46,7 @@ class Event: NSObject, NSCoding {
     }
     
     
-    // MARK:- NSCoding
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: PropertyKey.name)
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        // Name is required, initializer should fail if cannot decode name string
-        guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
-            return nil
-        }
-        
-//        let stage = aDecoder.decodeObject(forKey: PropertyKey.name) as? String
-        
-        
-        self.init(name: name)
-    }
-    
-    // MARK:- Archiving Paths
-    
-    static var DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    
-    static let ArchiveURL = DocumentsDirectory.appendPathComponent("events")
+
     
 
 }
