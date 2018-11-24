@@ -18,8 +18,6 @@ class ViewController: UITableViewController {
     
     // MARK: - Actions
 
-    @IBAction func addNewEvent(_ sender: UIBarButtonItem) {
-    }
     
     @IBAction func unwindToEventList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? DetailViewController, let event = sourceViewController.event {
@@ -38,6 +36,8 @@ class ViewController: UITableViewController {
             saveData()
         }
     }
+    
+    //MARK:-  VIEW LIFE CYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,7 @@ class ViewController: UITableViewController {
         cell.eventNameLabel.text = "\(event.name)"
         // unwrap optional stage and give default of "" if nil
 //        cell.stageLabel.text! = "\(event.stage ?? "")"
-        cell.percentLabel.text! = "\(String(describing: event.percentDiff))"
+        cell.percentLabel.text! = String(format: "%.2f", event.percentDiff) + "%"
 
         return cell
     }

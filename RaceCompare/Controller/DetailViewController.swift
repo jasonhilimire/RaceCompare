@@ -153,13 +153,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let userTime = Float(timeField.text!)
         let compareTime = Float(compareTimeField.text!)
         
-        print ("UserTime:\(String(describing: userTime)) , CompareTime \(String(describing: compareTime))")
-        
         if userTime != nil  && compareTime != nil{
             let percent = Float((compareTime! * 100) / userTime!)
             
-            percentageLabel.text = "\(percent)%"
-            //TODO: NOT SHOWING PERCENTAGE AS DECIMAL?  CHANGE TO FLOAT??
+            percentageLabel.text = String(format: "%.2f", percent) + "%"
             return percent
         } else {
             
