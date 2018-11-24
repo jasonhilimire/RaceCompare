@@ -61,7 +61,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         eventNameField.delegate = self
         
         loadEventData()
-
         updateSaveButtonStatus()
 
     }
@@ -121,7 +120,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         } else if timeField.isEditing {
             self.timeField.text = "\(totalTimeInSeconds)"
         }
-        event?.percentCompare()
+        percentCompare()
     }
     
     
@@ -150,20 +149,22 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
-    func percentCompare() {
+    func percentCompare() -> Float {
         let userTime = Float(timeField.text!)
         let compareTime = Float(compareTimeField.text!)
         
         print ("UserTime:\(String(describing: userTime)) , CompareTime \(String(describing: compareTime))")
         
         if userTime != nil  && compareTime != nil{
-            let percent = Float((userTime! * 100) / compareTime!)
+            let percent = Float((compareTime! * 100) / userTime!)
             
             percentageLabel.text = "\(percent)%"
             //TODO: NOT SHOWING PERCENTAGE AS DECIMAL?  CHANGE TO FLOAT??
+            return percent
         } else {
             
             percentageLabel.text = "0.00%"
+            return 0.00
         }
         
     }
@@ -179,11 +180,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let name = eventNameField.text ?? ""
         let compareTime = Int(compareTimeField.text ?? "")
         let userTime = Int(timeField.text ?? "")
-        let percentDiff = Float(percentageLabel.text ?? "")
+        let percentDiff = percentCompare()
         
         
         // set the event to be passed to the ViewController
-        event = Event(name: name, percentDiff: percentDiff ?? 0, userTime: userTime ?? 0, compareTime: compareTime ?? 0)
+        event = Event(name: name, percentDiff: percentDiff , userTime: userTime ?? 0, compareTime: compareTime ?? 0)
         
         print("PercentDiff = \(percentDiff)")
     }
