@@ -142,9 +142,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if let event = event {
             navigationItem.title = event.name
             eventNameField.text = event.name
+            stageField.text = event.stage
             percentageLabel.text = "\(String(describing: event.percentDiff))"
             compareTimeField.text = "\(String(describing: event.compareTime))"
             timeField.text = "\(String(describing: event.userTime))"
+            notesField.text = event.note
 
         }
     }
@@ -178,10 +180,12 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let compareTime = Int(compareTimeField.text ?? "")
         let userTime = Int(timeField.text ?? "")
         let percentDiff = percentCompare()
+        let stage = stageField.text ?? ""
+        let note = notesField.text ?? ""
         
         
         // set the event to be passed to the ViewController
-        event = Event(name: name, percentDiff: percentDiff , userTime: userTime ?? 0, compareTime: compareTime ?? 0)
+        event = Event(name: name, enteredStage: stage, percentDiff: percentDiff , userTime: userTime ?? 0, compareTime: compareTime ?? 0, enteredNote: note)
         
         print("PercentDiff = \(percentDiff)")
     }

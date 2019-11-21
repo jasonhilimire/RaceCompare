@@ -68,7 +68,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="oeI-nw-PaC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Wn-Yi-Ih2">
+                        <barButtonItem key="rightBarButtonItem" largeContentSizeImage="AddBtn" systemItem="add" id="5Wn-Yi-Ih2">
                             <connections>
                                 <segue destination="sw4-PU-3Tb" kind="show" identifier="AddItem" id="Zp2-Ml-oxk"/>
                             </connections>
@@ -204,12 +204,12 @@
                         <viewLayoutGuide key="safeArea" id="VXD-OG-wxr"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Event" id="D6I-5N-HkA">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="inx-ks-Tx2">
+                        <barButtonItem key="leftBarButtonItem" largeContentSizeImage="CancelBtn" style="plain" systemItem="cancel" id="inx-ks-Tx2">
                             <connections>
                                 <action selector="cancelButton:" destination="M30-sA-Esi" id="uDz-gx-CmK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="Sni-H4-GBq">
+                        <barButtonItem key="rightBarButtonItem" title="Item" largeContentSizeImage="SaveBtn" systemItem="save" id="Sni-H4-GBq">
                             <connections>
                                 <segue destination="nVM-O4-pgp" kind="unwind" unwindAction="unwindToEventListWithSender:" id="drn-Y6-1No"/>
                             </connections>
@@ -267,6 +267,11 @@
             <point key="canvasLocation" x="2122" y="500"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AddBtn" width="16" height="16"/>
+        <image name="CancelBtn" width="16" height="16"/>
+        <image name="SaveBtn" width="16" height="16"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nxZ-JA-i57"/>
     </inferredMetricsTieBreakers>
