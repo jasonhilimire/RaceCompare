@@ -38,11 +38,8 @@ class Event: Codable {
         
         if userTime != 0  && compareTime != 0{
             let percent = Float((compareTime * 100) / userTime)
-            
-            //TODO: showing as multiple decimal places- need to return it as 2
             return percent
         } else {
-
             return 0.00
         }
     }
